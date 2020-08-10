@@ -13,7 +13,7 @@ function renderTodos() {
     //clear to do list element and update todoCountspan
     todoList.innerHTML = "";
     todoCountSpan.textContent = todos.length;
-    //Rnder and new li for each todo
+    //Render and new li for each todo
  for (var i = 0; i < todo.length; i++) {
      var todo = todos [i];
 
@@ -22,17 +22,19 @@ function renderTodos() {
      todoList.appendChild("li");
  }
 }
-
+        // When form is submitted...
     todoForm.addEventListener("submit" , function(event){
         event.preventDefault();
 
         var newTodo = todoInput.value.trim();
-
+        // Return from function early if submitted todoText is blank
         if (newTodo === ""){
             return;
         }
+
+        // add new todoText to todos array, clear the input
         todos.push(newTodo);
         todoInput.value = "";
-
+        // Re-render the list
         renderTodos();
     });
