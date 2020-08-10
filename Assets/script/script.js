@@ -1,4 +1,25 @@
-///render a todo list///
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//render a todo list///
 
 var todoInput = document.querySelector("#todo-text");
 var todoForm = document.querySelector("#todo-form");
