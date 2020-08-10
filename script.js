@@ -18,7 +18,8 @@ function renderTodos() {
      var todo = todos [i];
 
      var li = document.createElement ("li");
-     li.textContent = tdod;
+     li.textContent = todo;
+     li.setAttribute("data-index", i);
      todoList.appendChild("li");
  }
 }
