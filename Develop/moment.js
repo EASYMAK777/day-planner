@@ -7,13 +7,7 @@ var blocktime = [
         meridiem: "am",
         reminder: ""
     },
-    {
-        id: "1",
-        hour: "10",
-        time: "10",
-        meridiem: "am",
-        reminder: ""
-    },
+    
     {
         id: "2",
         hour: "11",
