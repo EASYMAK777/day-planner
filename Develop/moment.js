@@ -85,3 +85,12 @@ function init() {
 //loads the date in header
 getHeaderDate();
 
+//creates the visuals for the scheduler body
+myDay.forEach(function(thisHour) {
+    //creates timblocks row
+    var hourRow = $("<form>").attr({
+        "class": "row"
+    });
+    
+})
+
