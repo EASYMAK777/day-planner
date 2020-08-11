@@ -91,6 +91,37 @@ myDay.forEach(function(thisHour) {
     var hourRow = $("<form>").attr({
         "class": "row"
     });
+    $(".container").append(hourRow);
+
+    //creates time field
+    var hourField = $("<div>")
+    .text("${thisHour.hour}${thisHour.meridiem}")
+    .attr({
+        "class": "col-md-2 hour"
+    });
+
+    //creates scheduler data
+    var hourPlan = $("<div>")
+    .attr({
+        "class": "col-md-9 description p-0"
+    });
+    var planData = $("<textarea>");
+    hourPlan.append(planData);
+    planData.attr("id", thisHour.id);
+    if (thisHour.time < moment().format("HH")) {
+        planData.attr ({
+            "class": "past",
+        })
+    } else if (thisHour.time === moment().format("HH")) {
+        planData.attr({
+            "class": "present"
+        })
+    } else if (thisHour.time > moment().format("HH")) {
+        planData.attr({
+            "class": "future"
+        })
+    }
     
+
 })
 
