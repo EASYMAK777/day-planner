@@ -125,16 +125,7 @@ blocktime.forEach(function(thisHour) {
     if (thisHour.time < moment().format("KK")) {
         planData.attr ({
             "class": "past", 
-        })
-    } else if (thisHour.time === moment().format("KK")) {
-        planData.attr({
-            "class": "present"
-        })
-    } else if (thisHour.time > moment().format("KK")) {
-        planData.attr({
-            "class": "future"
-        })
-    }
+       
 
     // creates save button
     var saveButton = $("<i class='far fa-save fa-lg'></i>")
