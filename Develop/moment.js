@@ -71,3 +71,17 @@ function displayReminders() {
     })
 }
 
+//sets existing locals storage data to view if inputed into scheduler
+function init() {
+    var storedDay = JSON.parse(localStorage.getItem("myDay"));
+
+    if (storedDay) {
+        myDay = storedDay;
+    }
+    saveReminders();
+    displayReminders();
+}
+
+//loads the date in header
+getHeaderDate();
+
