@@ -121,7 +121,27 @@ myDay.forEach(function(thisHour) {
             "class": "future"
         })
     }
-    
+    //create save button
+    var saveButton = $("<i class='far fa-save fa-lg'><i>")
+    var savePlan = $("<button>")
+        .attr({
+            "class": "col-md-1 saveBtn"
+        });
+        savePlan.append(saveButton);
+        hourRow.append(hourField, hourPlan, savePlan);
 
+})
+
+//loads any existing local storage data after components created
+init();
+
+//saves data to be used in Local Storage
+$(".saveBtn").on("click", function(event){
+    event.preventDefault();
+    var ssaveIndex = $(this).siblings(".description").children(".future").attr("id");
+    myDay[saveIndex].reminder = $(this).siblings(".description").children(".future").val();
+    console.log(saveIndex);
+    saveReminders();
+    displayReminders();
 })
 
