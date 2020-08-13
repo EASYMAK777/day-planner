@@ -33,3 +33,20 @@ $("#15 .description").val(localStorage.getItem("15"))
 $("#16 .description").val(localStorage.getItem("16"))
 $("#17 .description").val(localStorage.getItem("17"))
 
+//this function changes color according to the current hour
+
+function getColors() {
+    $(".time-block").each(function () {
+        var divId = $(this).attr("id")
+        var divTime = parseInt(divId);
+        if(divTime < time) {
+            $(this).children(".description").attr("class", "col-md-10 description past");
+        } else if (divTime == time) {
+            $(this).children(".description").attr("class", "col-md-10 description present");
+        } else {
+            $(this).children(".description").attr("class", "col-md-10 description future");
+        };
+    });
+
+};
+
