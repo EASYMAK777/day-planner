@@ -50,3 +50,10 @@ function getColors() {
 
 };
 
+getColors()
+
+function setTimeInterval() {
+    window.setInterval(getColors, 3000);
+};
+
+setTimeInterval();
