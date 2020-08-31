@@ -1,8 +1,8 @@
-//create Save button
+//create Save buttons
 $(".saveButton").on("click", function(event){
     event.preventDefault();
     var saveIndex = $(this).siblings(".description").children(".future").attr("id");
-    myDay[saveIndex].reminder = $(this).siblings(".description").children(".future").val();
+    myTasks[saveIndex].reminder = $(this).siblings(".description").children(".future").val();
     console.log(saveIndex);
     saveReminders();
     
@@ -18,7 +18,7 @@ function saveReminders() {
 
 //make object for my Day//
 
-var myDay = [
+var myTasks = [
     {
         id: "0",
         hour: "09",
@@ -42,14 +42,22 @@ function getTodaysDate() {
     console.log(todaysDate);
 }
 
+//load the header date//
 getTodaysDate();
 
 
 
 
 
-//load the header date//
+
 //sets any data in local storage for viewing//
+function saveTasks() {
+    localStorage.setItem("myTasks",JSON.stringify(myTasks));
+}
+
+
+
+
 //set any existing local storage data to view if already saved//
 
 
